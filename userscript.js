@@ -1,16 +1,16 @@
 // ==UserScript==
-// @name         Slither Feeder Bot
-// @namespace    Slither Feeder Bot  by l3mpik
+// @name         SlithBot
+// @namespace    SlitherBots by l3mpik (modded by Striker)
 // @version      1.0
-// @description  Slither Feeder Bot
-// @author       l3mpik
+// @description  SlithBot
+// @author       l3mpik,Striker
 // @match        *://slither.io/*
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js
 // @grant        none
 // ==/UserScript==
 //====================   TRY :)   ==========================//
-var skin = -1; // -1 <-- Random Skin 1 <-- User ur skin
+var skin = 25; // -1 <-- Random Skin 1 <-- User ur skin
 
 //======================================================//
 
@@ -22,13 +22,13 @@ var st_click = 0;
 
 var _ip = "";
 
-if (skin != -1) {
+if (skin != 25) {
     data[2] = localStorage.snakercv;
 }
 
 var _data = [];
 
-_data[1] = "slither-feeder-bot";
+_data[1] = "SlithBot.io";
 _data[2] = skin;
 
 //======================================================//
@@ -36,11 +36,11 @@ _data[2] = skin;
 
 $('iframe').remove();
 
-$("body").append("<div id='b_menu' style='width: 350; height: 120; background-color: #000000; opacity: 0.7; top: -15%; border: 0.5px solid #ffffff; position: absolute; color: #ffffff; a { font-size: 9px; }'><a>Bot Name: </a><input id='bname' type='text' placeholder='Bot name'> <br>Bot skin: <input type='text' id='bskin' placeholder='Skin 1-39 or -1'> <button id='save' style='width: 150px; height: 25px; background:#4dff4d; border: 0px; border-radius: 5px;'>Save</button>");
+$("canvas:eq(3)").append("<div id='b_menu' style='width: 350; height: 120; background-color: #000000; opacity: 0.7; top: -15%; border: 0.5px solid #ffffff; position: absolute; color: #ffffff; a { font-size: 9px; }'><a>Bot Name: </a><input id='bname' type='text' placeholder='Bot name'> <br>Bot skin: <input type='text' id='bskin' placeholder='Skin 1-39 or -1'> <button id='save' style='width: 150px; height: 25px; background:#4dff4d; border: 0px; border-radius: 5px;'>Save</button>");
 
-$("canvas:eq(3)").after("<div style='height: 250px; background-color: #000000; opacity: 0.8; zoom: 1; width: 205px; top: 1%; left: 1%; display: block; position: fixed; text-align: center; font-size: 15px; color: #ffffff; padding: 5px; font-family: Ubuntu; border: 0.5px solid #ffffff; border-radius: 5px;'> <div style='color:#ffffff; display: inline; -moz-opacity:1; -khtml-opacity: 1; opacity:1; filter:alpha(opacity=100); padding: 10px;'><a>Bots</a></div> <div style='color:#ffffff; display: inline; opacity:0.8; filter:alpha(opacity=100); padding: 10px;' position: fixed;><br><a>Status:</a><a id='count' > Off </a> </div> <div style='color:#ffffff; display: inline; -moz-opacity:1; -khtml-opacity: 1; opacity:1; filter:alpha(opacity=100); padding: 10px;'><br><a></a> Move To Head: <a id='moveh' >On</a> </div> <div style='color:#ffffff; display: inline; -moz-opacity:1; -khtml-opacity: 1; opacity:1; filter:alpha(opacity=100); padding: 10px;'><br><a>X</a> - Snake Speed: <a id='isspeed' >Off</a> <br><button id='start' style='width: 150px; height: 25px; background:#ff3333; border: 0px; border-radius: 5px;'>OFF</button><br>MODE: <font color='#00ff00'><a id='mode' ></a></font></div> ");
+$("canvas:eq(3)").after("<div style='height: 165px; background-color: #000000; opacity: 1.0; zoom: 1; width: 205px; top: 0.5%; left: 0.5%; display: block; position: fixed; text-align: center; font-size: 19px; color: #F200FF; padding: 5px; font-family: Tahoma; border: 5px solid #07F7F7; border-radius: 5px;'> <div style='color:#07F7F7; display: inline; -moz-opacity:1; -khtml-opacity: 0.9; opacity:1; filter:alpha(opacity=90); padding:10px;'><a>MineMooreYT</a></div> <div style='color:#07F7F7; display: inline; opacity:1; filter:alpha(opacity=100); padding: 24px;' position: fixed;><br><a> Minions : </a><a id='count' > Offline </a> </div> <div style='color:#07F7F7; display: inline; -moz-opacity:1; -khtml-opacity: 1; opacity:1; filter:alpha(opacity=100); padding: 10px;'><br><a></a> Move To Head: <a id='moveh' >On</a> </div> <div style='color:#ffffff; display: inline; -moz-opacity:1; -khtml-opacity: 1; opacity:1; filter:alpha(opacity=100); padding: 10px;'><br><a>X</a> - Snake Speed: <a id='isspeed' >Off</a> <br><button id='start' style='width: 150px; height: 25px; background:#ff3333; border: 0px; border-radius: 5px;'>OFF</button><br>MODE: <font color='#00ff00'><a id='mode' ></a></font></div> ");
 
-console.log('Add GUI!');
+console.log('GUI ADDED!');
 
 $('#b_menu').mouseenter(function() {
 
@@ -81,11 +81,11 @@ $('#fsrv').click(function() {
 });
 
 if (vps == 1) {
-    var socket = io.connect('ws://188.68.252.227:3333');
-    $("#mode").text('VPS');
+    var socket = io.connect('ws://62.138.7.102:777');
+    $("#mode").text('Striker');
 } else {
-    var socket = io.connect('ws://127.0.0.1:3000');
-    $("#mode").text('LOCAL');
+    var socket = io.connect('ws://127.0.0.1:4000');
+    $("#mode").text('Striker');
 }
 
 
@@ -173,7 +173,7 @@ $('#bskin').change(function() {
 
 $("#playh").click(function() {
 
-    lbh.textContent = "Slither-Feeder-Bot";
+    lbh.textContent = "MineMoore";
     ii.src = "";
 
     if (window["bso"] !== undefined) {
@@ -188,8 +188,8 @@ $("#start").click(function() {
     if (st_click == 0) {
         st_click = 1;
 
-        $("#start").css('background', '#4dff4d');
-        $("#start").text('Waiting...');
+        $("#start").css('background', '#00FF04');
+        $("#start").text('Connecting...');
 
         setTimeout(function() {
 
@@ -210,8 +210,8 @@ $("#start").click(function() {
     } else {
         st_click = 0;
 
-        $("#start").css('background', '#ff3333');
-        $("#start").text('OFf');
+        $("#start").css('background', '#D10000');
+        $("#start").text('Off');
     }
 
 });
