@@ -29,7 +29,7 @@ let alive = 0;
 let gX = 0;
 let gY = 0;
 
-let perProxy = 2;
+let perProxy = 3;
 
 const bots = [];
 
