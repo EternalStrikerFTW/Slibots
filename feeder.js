@@ -164,6 +164,6 @@ socket.on('cmd', function(ss) {
 });
 
 
-console.log('Waiting for client!');
+console.log('Join a Game!');
 
 app.listen(3000)
